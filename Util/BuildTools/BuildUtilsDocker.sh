@@ -17,7 +17,7 @@ FBXSDK_URL=https://www.autodesk.com/content/dam/autodesk/www/adn/fbx/2020-0-1/${
 
 if [ ! -d "${FBX2OBJ_DEP_FOLDER}" ]; then
   log "Downloading FBX SDK..."
-  curl "${FBXSDK_URL}" > "${CARLA_DOCKER_UTILS_FOLDER}/${LIB_NAME}.tar.gz"
+  curl -L --user-agent "Mozzila" "${FBXSDK_URL}" -o "${CARLA_DOCKER_UTILS_FOLDER}/${LIB_NAME}.tar.gz"
 
   echo "Unpacking..."
   mkdir -p "${FBX2OBJ_DEP_FOLDER}"
